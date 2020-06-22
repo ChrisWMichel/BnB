@@ -9,6 +9,8 @@ This app uses Laravel 7.2 and Vu.js 2.5
 - Database is MySQL
 - XAMPP
 
+## Hey BrutusWTF, thaks for checking out my portfolio!
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

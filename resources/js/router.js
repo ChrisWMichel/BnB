@@ -3,12 +3,12 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Home from './components/ExampleComponent'
-import Home2 from './components/Example2'
+//import Home from './components/ExampleComponent'
+import Bookables from './components/bookables/Bookables'
 
 const routes = [
-    { path: "/", component:Home, name: 'home'},
-    { path: "/home2", component:Home2, name:'home2'}
+    { path: "/", component:Bookables, name: 'home'},
+   // { path: "/home2", component:Home2, name:'home2'}
 ]
 
 

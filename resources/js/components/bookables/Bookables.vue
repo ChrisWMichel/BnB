@@ -5,12 +5,10 @@
         <div v-else>
 
             <div v-for="row in rows" :key="'row' + row" class="row mb-4">
-                <div v-for="(book, col) in bookablesInRow(row)" :key="'col' + col" class="col">
+                <div v-for="(book, col) in bookablesInRow(row)" :key="'col' + col" class="col d-flex align-items-stretch">
                     <list-item
-                        :title="book.title"
-                        :content="book.description"
-                        :price="book.price"
 
+                        v-bind="book"
                     ></list-item>
                 </div>
                 <div class="col" v-for="p in placeholdersInRow(row)" :key="'placeholder' + p"></div>
@@ -49,9 +47,6 @@
         },
         created() {
             this.loading = true;
-           /* axios.get('/api/bookables/', 1)
-            .then(resp => console.log('resp', resp.data))
-            .catch(error => console.log(error.response.data))*/
 
             axios.get('/api/bookables')
             .then(

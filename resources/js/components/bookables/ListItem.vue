@@ -1,13 +1,13 @@
 <template>
-    <div class="card">
-
+    <div class="card w-100">
         <div class="card-body">
-            <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">
-                {{content}}<br>
-                Price per night: ${{price}}
-            </p>
-<!--            <a href="#" class="btn btn-primary">Go somewhere</a>-->
+            <router-link :to="{name:'bookable', params:{id}}">
+                <h5 class="card-title">{{title}}</h5>
+            </router-link>
+            <div class="card-text">
+                <p>{{description}}</p>
+                <p>Price per night: ${{price}}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -16,7 +16,7 @@
     export default {
         name: "ListItem",
         //props:["title", "content", "price"]
-        props:{"title":String, "content":String, "price":Number},
+        props:{"title":String, "description":String, "price":Number, 'id':Number},
         mounted() {
 
         }

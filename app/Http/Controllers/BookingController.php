@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\BookableIndexResource;
-use App\Http\Resources\BookableShowResource;
-use App\Models\Bookable;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
-class BookableController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return mixed
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return BookableIndexResource::collection(Bookable::all());
+        //
     }
 
     /**
@@ -43,21 +41,21 @@ class BookableController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bookable  $bookable
-     * @return mixed
+     * @param  \App\Models\Booking  $booking
+     * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Booking $booking)
     {
-        return new BookableShowResource(Bookable::findOrFail($id));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Bookable  $bookable
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bookable $bookable)
+    public function edit(Booking $booking)
     {
         //
     }
@@ -66,10 +64,10 @@ class BookableController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bookable  $bookable
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bookable $bookable)
+    public function update(Request $request, Booking $booking)
     {
         //
     }
@@ -77,10 +75,10 @@ class BookableController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bookable  $bookable
+     * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bookable $bookable)
+    public function destroy(Booking $booking)
     {
         //
     }

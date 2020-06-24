@@ -4,12 +4,12 @@
 
 This app uses Laravel 7.2 and Vu.js 2.5
 
+- SPA
 - SASS environment 
 - CSS: bootstrap
 - Database is MySQL
 - XAMPP
 
-## Hey BrutusWTF, thaks for checking out my portfolio!
 
 ## License
 

@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Bookable;
 use App\Models\Review;
 use Illuminate\Http\Request;
-use App\Http\Resources\ViewResource;
+use App\Http\Resources\ReviewResource;
 
-class ReviewController extends Controller
+class BookableReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      * @param \Illuminate\Http\Request
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function __invoke($id, Request $request)
     {
-        $bookable = new ViewResource(Bookable::findOrFail('id'));
+        $bookable = Bookable::findOrFail($id);
 
-        return $bookable->reviews()->latest()->get();
+        return ReviewResource::collection($bookable->reviews()->latest()->get());
     }
 
 }

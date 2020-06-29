@@ -26,11 +26,6 @@
             emptyStars(){
                 return (5 - Math.ceil(this.value));
             }
-        },
-        created(){
-            if(this.value > 5 || this.value < 0){
-                this.value = 5;
-            }
         }
     }
 </script>

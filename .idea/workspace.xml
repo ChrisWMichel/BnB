@@ -2,31 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766c3c46-0805-4129-8d20-f96023881b3d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/review/Review.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/components/StarRating.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingByReviewController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BookableReviewResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BookingByReviewBookableShowResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/BookingByReviewShowResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_26_182933_add_review_key_to_bookings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/components/FatalError.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/components/ValidationErrors.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/mixins/validationErrors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/shared/utils/response.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookableReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ViewResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ReviewResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookableReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookableReviewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ReviewResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ReviewResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Booking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/bookable/Availability.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/bookable/Availability.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/bookable/Bookable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/bookable/Bookable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/bookables/ReviewList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/bookables/ReviewList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/review/Review.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/review/Review.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/shared/components/StarRating.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/shared/components/StarRating.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -223,7 +218,11 @@
       <workItem from="1592829060041" duration="19078000" />
       <workItem from="1592919428771" duration="19217000" />
       <workItem from="1593005021526" duration="12471000" />
-      <workItem from="1593097407842" duration="9311000" />
+      <workItem from="1593097407842" duration="13392000" />
+      <workItem from="1593176778613" duration="3500000" />
+      <workItem from="1593263656090" duration="3235000" />
+      <workItem from="1593352837161" duration="7956000" />
+      <workItem from="1593433074482" duration="19815000" />
     </task>
     <servers />
   </component>
@@ -238,26 +237,26 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1149" y="427" key="#Composer/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1592510220634" />
-    <state x="-1206" y="145" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593009156185">
+    <state x="-1206" y="145" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593117005916">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1206" y="145" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593009156185" />
-    <state width="1737" height="252" key="GridCell.Tab.0.bottom" timestamp="1593098595965">
+    <state x="-1206" y="145" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593117005916" />
+    <state width="1701" height="245" key="GridCell.Tab.0.bottom" timestamp="1593435675414">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1737" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593098595965" />
-    <state width="1737" height="252" key="GridCell.Tab.0.center" timestamp="1593098595965">
+    <state width="1701" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593435675414" />
+    <state width="1701" height="245" key="GridCell.Tab.0.center" timestamp="1593435675414">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1737" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593098595965" />
-    <state width="1737" height="252" key="GridCell.Tab.0.left" timestamp="1593098595965">
+    <state width="1701" height="245" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593435675414" />
+    <state width="1701" height="245" key="GridCell.Tab.0.left" timestamp="1593435675414">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1737" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593098595965" />
-    <state width="1737" height="252" key="GridCell.Tab.0.right" timestamp="1593098595965">
+    <state width="1701" height="245" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593435675414" />
+    <state width="1701" height="245" key="GridCell.Tab.0.right" timestamp="1593435675414">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1737" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593098595965" />
+    <state width="1701" height="245" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593435675414" />
     <state width="1648" height="320" key="GridCell.Tab.1.bottom" timestamp="1592516170182">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
@@ -290,10 +289,10 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state width="1648" height="320" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1592516170182" />
-    <state x="-1379" y="269" key="IDE.errors.dialog" timestamp="1592920790512">
+    <state x="-1379" y="269" key="IDE.errors.dialog" timestamp="1593196632884">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state x="-1379" y="269" key="IDE.errors.dialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1592920790512" />
+    <state x="-1379" y="269" key="IDE.errors.dialog/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1593196632884" />
     <state x="77" y="47" width="1455" height="930" key="dock-window-1" timestamp="1592576641521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

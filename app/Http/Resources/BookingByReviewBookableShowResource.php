@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ReviewResource extends JsonResource
+class BookingByReviewBookableShowResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,10 +14,10 @@ class ReviewResource extends JsonResource
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
         return [
-
-            'created_at' => $this->created_at
+            'bookable_id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description
         ];
     }
 }

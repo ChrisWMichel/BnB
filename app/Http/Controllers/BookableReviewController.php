@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bookable;
-use App\Models\Review;
 use Illuminate\Http\Request;
-use App\Http\Resources\ReviewResource;
+use App\Http\Resources\BookableReviewResource;
 
 class BookableReviewController extends Controller
 {
@@ -18,7 +17,7 @@ class BookableReviewController extends Controller
     {
         $bookable = Bookable::findOrFail($id);
 
-        return ReviewResource::collection($bookable->reviews()->latest()->get());
+        return BookableReviewResource::collection($bookable->reviews()->latest()->get());
     }
 
 }

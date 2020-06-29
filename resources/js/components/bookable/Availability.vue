@@ -14,9 +14,10 @@
                        class="form-control form-control-sm"
                        placeholder="Start Date"
                        v-model="from"
-                       :class="[{'is-invalid': this.errorFor('from')}]"
+                       :class="[{'is-invalid': errorFor('from')}]"
                        required>
-                <div class="invalid-feedback" v-for="(error, index) in this.errorFor('from')" :key="index">{{error}}</div>
+<!--                <div class="invalid-feedback" v-for="(error, index) in this.errorFor('from')" :key="index">{{error}}</div>-->
+                <validation-errors :errors="errorFor('from')"></validation-errors>
             </div>
 
             <div class="form-group col-md-6">
@@ -26,9 +27,10 @@
                        class="form-control form-control-sm"
                        placeholder="End Date"
                        v-model="to"
-                       :class="[{'is-invalid': this.errorFor('to')}]"
+                       :class="[{'is-invalid': errorFor('to')}]"
                        required><!-- @keyup.enter.prevent="check"-->
-                <div class="invalid-feedback" v-for="(error, index) in this.errorFor('to')" :key="index">{{error}}</div>
+<!--                <div class="invalid-feedback" v-for="(error, index) in this.errorFor('to')" :key="index">{{error}}</div>-->
+                <validation-errors :errors="errorFor('to')"></validation-errors>
             </div>
         </div>
         <button class="btn btn-secondary btn-block" :disabled="loading" @click="check">Check!</button>
@@ -36,8 +38,12 @@
 </template>
 
 <script>
+    import  {is422} from '../shared/utils/response';
+    import validationErrors from "../shared/mixins/validationErrors";
+
     export default {
         name: "Availability",
+        mixins:[validationErrors],
         props:{
             'bookableId':String
         },
@@ -46,30 +52,24 @@
                 from:null,
                 to:null,
                 loading:false,
-                status: null,
-                errors: null
+                status: null
             }
         },
         methods:{
             check(){
                 this.loading = true;
                 this.status = null;
-                this.errors = null;
+               // this.errors = null;
                 axios.get(`/api/bookables/${this.bookableId}/availability?from=${this.from}&to=${this.to}`)
                 .then(resp => {
                     this.status = resp.status;
 
                 }).catch(error => {
-                    if(422 === error.response.status){
+                    if(is422(error)){
                         this.errors = error.response.data.errors;
                     }
                     this.status = error.response.status;
                 }).then(() => this.loading = false)
-
-
-            },
-            errorFor(field){
-                return this.hasErrors && this.errors[field] ? this.errors[field] : null;
             }
         },
         computed:{

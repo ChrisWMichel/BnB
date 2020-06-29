@@ -3,8 +3,9 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Carbon\Carbon;
 
-class ReviewResource extends JsonResource
+class BookableReviewResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,9 +16,12 @@ class ReviewResource extends JsonResource
     public function toArray($request)
     {
         //return parent::toArray($request);
-        return [
 
+        return [
+            'rating' => $this->rating,
+            'content' => $this->content,
             'created_at' => $this->created_at
         ];
+        //Carbon::createFromTimestamp(strtotime($this->created_at))->diffForHumans()
     }
 }

@@ -2,8 +2,11 @@
     <div>
 
        <fatal-error v-if="error"></fatal-error>
+        <success v-if="success">
+            Thank you for leaving a review.
+        </success>
 
-        <div class="row" v-else>
+        <div class="row" v-if="!success && !error">
             <div :class="[{'col-md-4':twoColumns}, {'d-none': oneColumn}]">
                 <div class="card">
                     <div class="card-body">
@@ -78,7 +81,8 @@
                 loading:false,
                 booking:null,
                 error:false,
-                sending:false
+                sending:false,
+                success: false
             }
         },
         async created(){
@@ -124,10 +128,12 @@
             submit(){
                 this.sending = true;
                 this.errors = null;
+                this.success = false;
                 // Store the review
                 axios.post(`/api/reviews`, this.review)
                 .then(resp => {
-                    this.$router.push({name:'bookable', params:{id:this.booking.bookable.bookable_id}});
+                    this.success = resp.status === 201;
+                    setTimeout(()=> this.$router.push({name:'bookable', params:{id:this.booking.bookable.bookable_id}}), 5000);
                 })
                 .catch(err => {
                     if(is422(err)){

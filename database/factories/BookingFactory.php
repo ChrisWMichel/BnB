@@ -22,7 +22,6 @@ $factory->define(Booking::class, function (Faker $faker) {
     return [
         //'bookables_id' => \App\Models\Bookable::all()->random()->id,
         'from' => $from,
-        'to' => $to,
-        'price' => random_int(200, 5000)
+        'to' => $to
     ];
 });

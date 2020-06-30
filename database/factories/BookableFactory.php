@@ -13,6 +13,7 @@ $factory->define(Bookable::class, function (Faker $faker) {
     return [
         'title' => $faker->city . ' ' . \Illuminate\Support\Arr::random($suffix),
         'description' => $faker->text(),
-        'created_at' => $faker->dateTimeBetween('-3 months')
+        'price' => random_int(50, 600)
+        //'created_at' => $faker->dateTimeBetween('-3 months')
     ];
 });

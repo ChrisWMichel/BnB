@@ -19,7 +19,6 @@ class CreateBookingsTable extends Migration
             $table->foreign('bookable_id')->references('id')->on('bookables');
             $table->date('from');
             $table->date('to');
-            $table->double('price');
             $table->timestamps();
         });
     }

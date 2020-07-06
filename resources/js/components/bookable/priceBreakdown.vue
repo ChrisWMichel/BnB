@@ -17,7 +17,7 @@
 <script>
     export default {
         name: "priceBreakdown",
-        props:{price:Object}
+        props:['price']
     }
 </script>
 

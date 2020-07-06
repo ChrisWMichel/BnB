@@ -68,6 +68,7 @@
            async check(){
                 this.loading = true;
                 this.status = null;
+                this.errors = null;
 
                 //this.$store.commit('setLastSearch', {from: this.from, to: this.to});
                 this.$store.dispatch('setLastSearch', {from: this.from, to: this.to});

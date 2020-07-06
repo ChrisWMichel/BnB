@@ -21,9 +21,16 @@
             <transition>
                 <div v-if="price">
                     <price-breakdown :price="price" class="mb-4"></price-breakdown>
-                    <button class="btn btn-outline-secondary btn-block">Book now</button>
+                    <button class="btn btn-outline-secondary btn-block" @click="addToBasket" :disabled="inBasketAlreadyFromGetters">Book now</button>
                 </div>
             </transition>
+            <button
+                class="btn btn-outline-secondary btn-block mt-4"
+                @click="removeFromBasket"
+                v-if="inBasketAlreadyFromGetters"
+            >Remove from basket</button>
+            <div v-if="inBasketAlreadyFromGetters" class="mt-3 text-muted warning">If you want to change dates, remove this booking first.</div>
+
         </div>
 
     </div>
@@ -54,9 +61,17 @@
             })
             .catch(error => console.log(error.response.data));
         },
-        computed:mapState({
-            lastSearch: 'lastSearch'
-        }),
+        computed:{
+            ...mapState({
+                lastSearch: 'lastSearch'
+            }),
+            inBasketAlreadyFromGetters(){
+                if(this.bookable === null){
+                    return false;
+                }
+                return this.$store.getters.inBasketAlready(this.bookable.id)
+            }
+        },
         methods:{
           async checkPrice(hasAvailability){
                 if(!hasAvailability){
@@ -68,11 +83,24 @@
                 } catch(err){
                     this.price = null;
                 }
+            },
+            addToBasket(){
+              this.$store.dispatch("addToBasket", {
+                  bookable : this.bookable,
+                  price: this.price,
+                  dates: this.lastSearch
+              })
+            },
+            removeFromBasket(){
+              this.$store.dispatch('removeFromBasket', this.bookable.id);
             }
         }
     }
 </script>
 
 <style scoped>
-
+    .warning{
+        font-size: 1.0rem;
+        color: #078709 !important;
+    }
 </style>

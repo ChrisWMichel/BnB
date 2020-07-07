@@ -1,11 +1,27 @@
 <template>
     <div>
-        <nav class="navbar bg-white border-bottom navbar-light">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom navbar-light">
             <router-link class="navbar-brand mr-auto font-weight-bold" :to="{name:'home'}">Bed & Breakfast</router-link>
-            <router-link class="btn nav-button" :to="{name:'basket'}">
-                Basket
-                <span v-if="itemsInBasket" class="badge badge-secondary">{{itemsInBasket}}</span>
-            </router-link>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <router-link class="btn nav-link" :to="{name:'basket'}">
+                        Basket
+                        <span v-if="itemsInBasket" class="badge badge-secondary">{{itemsInBasket}}</span>
+                    </router-link>
+                </li>
+                <li class="nav-item" v-if="!isLoggedIn">
+                    <router-link class="nav-link" :to="{name:'register'}">Register</router-link>
+                </li>
+                <li class="nav-item" v-if="!isLoggedIn">
+                    <router-link class="nav-link" :to="{name:'login'}">Login</router-link>
+                </li>
+                <li class="nav-item" v-if="isLoggedIn">
+                    <a class="nav-link" href="#" @click="logout">Logout</a>
+                </li>
+
+            </ul>
+
+
         </nav>
 
         <div class="container mt-4 mb-4 pr-4 pl-4">
@@ -28,12 +44,23 @@
         },
         computed:{
             ...mapState({
-                lastSearchComputed: 'lastSearch'
+                lastSearchComputed: 'lastSearch',
+                isLoggedIn: "isLoggedIn"
             }),
             ...mapGetters({
                 itemsInBasket: 'itemsInBasket'
             })
 
+        },
+        methods:{
+            async logout(){
+                try{
+                    axios.post("/logout");
+                    this.$store.dispatch('logout');
+                } catch (err) {
+                    console.log(err.response.status);
+                }
+            }
         }
     }
 </script>

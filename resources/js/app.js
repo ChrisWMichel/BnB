@@ -1,10 +1,11 @@
-import moment from "moment";
+
 
 
 require('./bootstrap');
 
 window.Vue = require('vue');
 import Vue from 'vue';
+import moment from "moment";
 import router from './router';
 import Index from './components/Index'; // main component
 import StarRating from './components/shared/components/StarRating';
@@ -20,6 +21,18 @@ Vue.component('fatal-error', FatalError);
 Vue.component('validation-errors', ValidationErrors);
 Vue.component('success', Success);
 
+window.axios.interceptors.response.use(
+    response => {
+        return response;
+    },
+    error => {
+        if(error.response.status === 401){
+            store.dispatch('logout');
+        }
+
+        return Promise.reject(error);
+    }
+);
 
 const app = new Vue({
     router,
@@ -28,7 +41,9 @@ const app = new Vue({
     components: {
         'index': Index
     },
-    beforeCreate(){
+    async beforeCreate(){
         this.$store.dispatch('loadStoredState');
+
+        this.$store.dispatch('loadUser');
     }
 });

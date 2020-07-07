@@ -9,21 +9,19 @@
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 
-//@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
-//@import '~vuetify/dist/vuetify.min.css';
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-// transition name='fade'
-//.fade-enter-active, .fade-leave-active {
-//    transition: opacity .5s;
-//}
-//.fade-enter, .fade-leave-to {
-//    opacity: 0;
-//}
-.v-enter-active, .v-leave-active {
+.fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
 }
-.v-enter, .v-leave-to {
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.v-enter-active, .v-leave-active {
+    transition: opacity 4s;
+}
+.v-enter, .v-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
 }

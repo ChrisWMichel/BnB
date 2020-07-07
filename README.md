@@ -9,7 +9,7 @@ This app uses Laravel 7.2 and Vu.js 2.5
 - CSS: bootstrap
 - Database is MySQL
 - XAMPP
-
+- Auth implemented using Sanctum
 
 ## License
 

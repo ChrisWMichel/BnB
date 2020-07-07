@@ -6,24 +6,35 @@ Vue.use(VueRouter)
 import Bookable from './components/bookable/Bookable'
 import Bookables from './components/bookables/Bookables'
 import Review from "./components/review/Review";
-import Basket from "./basket/Basket";
+import Basket from "./components/basket/Basket";
+import Register from "./auth/register";
 
 const routes = [
-    { path: "/", component:Bookables, name: 'home'},
+    { path: "/", component:Bookables, name: 'home'}, // require("./components/bookables/Bookables")
     {
         path: "/bookable/:id",
-        component:Bookable,
+        component:Bookable,  // require("./components/bookable/Bookable")
         name:'bookable'
     },
     {
         path: "/review/:id",
-        component: Review,
+        component: Review, // require("./components/review/Review")
         name:'review'
     },
     {
         path: "/basket",
-        component: Basket,
+        component: Basket, // require("./components/basket/Basket")
         name:'basket'
+    },
+    {
+        path: "/login",
+        component:require("./auth/Login").default,
+        name:'login'
+    },
+    {
+        path: "/register",
+        component:Register,
+        name:'register'
     }
 ]
 

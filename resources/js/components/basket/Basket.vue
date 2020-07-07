@@ -114,7 +114,7 @@
 
 <script>
     import {mapGetters, mapState} from 'vuex';
-    import validationErrors from "../components/shared/mixins/validationErrors";
+    import validationErrors from "../shared/mixins/validationErrors";
 
     export default {
         name: "Basket",
